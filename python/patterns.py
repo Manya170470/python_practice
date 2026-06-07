@@ -83,6 +83,73 @@ class Pattern:
                 print("*", end="")
             print()
 
+    def pattern11(self, n):
+        for i in range(n):
+            if i % 2 == 0:
+                start = 1
+            else:
+                start = 0
+            for j in range(i+1):
+                print(start, end ="")
+                start = 1 - start
+            print()
+
+    def pattern12(self ,n):
+        for i in range(n):
+            for j in range(i+1):
+                print(j+1, end="")
+            for j in range(2*n-2*(i+1)):
+                print(" ", end="")
+            for j in range(i+1, 0, -1):
+                print(j, end="")
+            print()
+
+    def pattern13(self, n):
+        num = 1
+        for i in range(n):
+            for j in range(i+1):
+                print(num, end=" ")
+                num += 1
+            print()
+
+    def pattern14(self, n):
+        for i in range(n):
+            for j in range(i+1):
+                print(chr(65+j), end="")
+            print()
+
+    def pattern15(self, n):
+        for i in range(n):
+            for j in range(n-i):
+                print(chr(65+j), end ="")
+            print()
+
+    def pattern16(self, n):
+        for i in range(n):
+            for j in range(i+1):
+                print(chr(65+i), end="")
+            print()
+
+    def pattern17(self, n):
+        for i in range(n):
+            for j in range(n-(i+1)):
+                print(" ", end="")
+            for j in range(i+1):
+                print(chr(65+j), end="")
+            for j in range(i-1, -1, -1):
+                print(chr(65+j), end="")
+            print()
+
+    def pattern18(self, n):
+        for i in range(n):
+            ch = 65 + (n-i-1)
+            for j in range(i+1):
+                print(chr(ch), end="")
+                ch += 1
+            print()
+   
+    def pattern19(self, n):
+        
 
 obj = Pattern()
 obj.pattern1(4)
@@ -95,3 +162,11 @@ obj.pattern7(5)
 obj.pattern8(5)
 obj.pattern9(5)
 obj.pattern10(5)
+obj.pattern11(5)
+obj.pattern12(5)
+obj.pattern13(5)
+obj.pattern14(5)
+obj.pattern15(5)
+obj.pattern16(5)
+obj.pattern17(5)
+obj.pattern18(5)
