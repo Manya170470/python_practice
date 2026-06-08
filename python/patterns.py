@@ -149,6 +149,24 @@ class Pattern:
             print()
    
     def pattern19(self, n):
+        for i in range(n):
+            for j in range(n-i):
+                print("*", end="")
+            for j in range(2*i):
+                print(" ", end="")
+            for j in range(n-i):
+                print("*", end="")
+            print()
+        for i in range(n):
+            for j in range(i+1):
+                print("*", end="")
+            for j in range(2*(n-i-1)):
+                print(" ", end="")
+            for j in range(i+1):
+                print("*", end="")
+            print()
+
+    def pattern20(self, n):
         
 
 obj = Pattern()
@@ -170,3 +188,4 @@ obj.pattern15(5)
 obj.pattern16(5)
 obj.pattern17(5)
 obj.pattern18(5)
+obj.pattern19(5)
