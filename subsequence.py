@@ -55,3 +55,33 @@ def CountSubsequenceWithSumK(arr, current_sum, ind, k):
 arr = [1,2,1]
 k = 2 
 print(CountSubsequenceWithSumK(arr, 0 , 0, k))
+
+def PrintPermutations1(arr, ds, visited, ans):
+    if len(ds) == len(arr):
+        ans.append(ds.copy())
+        return 
+    for i in range(len(arr)):
+        if i not in visited:
+            ds.append(arr[i])
+            visited[i] = True 
+            PrintPermutations1(arr, ds, visited, ans)
+            ds.pop()
+            del visited[i]
+arr = [1,2,3]
+ans = []
+PrintPermutations1(arr, [], {}, ans)
+print(ans)
+
+def PrintPermutations2(arr, ind, ds):
+    if ind == len(arr):
+        ds.append(arr.copy())
+        return 
+    for i in range(ind, len(arr)):
+        arr[i], arr[ind] = arr[ind], arr[i]
+        PrintPermutations2(arr, ind +1, ds)
+        arr[i], arr[ind] = arr[ind], arr[i]
+arr = [1,2,3]
+ans = []
+PrintPermutations2(arr, 0, ans)
+print(ans)
+        
