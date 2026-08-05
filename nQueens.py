@@ -51,3 +51,4 @@ for solution in result:
         print(row)
     print()
 
+
