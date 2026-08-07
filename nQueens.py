@@ -52,3 +52,38 @@ for solution in result:
     print()
 
 
+def NqueenOptimised(n):
+    board = [["." for _ in range(n)] for _ in range(n)]
+    rows = {}
+    lower_diagonal = {}
+    upper_diagonal = {}
+    ans = []
+    def solve(col):
+        if col == n:
+            temp = ["".join(row) for row in board]
+            ans.append(temp)
+            return
+
+        for row in range(n):
+            if (row not in rows and (row + col) not in lower_diagonal and (n-1+col-row) not in upper_diagonal):
+                board[row][col] = "Q"
+                rows[row] = True
+                lower_diagonal[row + col] = True
+                upper_diagonal[n - 1+ col - row] = True
+
+                solve(col + 1)
+                board[row][col] = "."
+                del rows[row] 
+                del lower_diagonal[row + col] 
+                del upper_diagonal[n - 1+ col - row] 
+
+    solve(0)
+    return ans 
+
+n = 8
+result = NqueenOptimised(n)
+for solution in result:
+    for row in solution:
+        print(row)
+    print()
+

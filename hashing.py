@@ -30,4 +30,4 @@ r = int(input("Enter no of queries"))
 for i in range(r):
     tocheck = input("Enter the {} query".format(i + 1))
     print(hash_arr3[ord(tocheck)])
-    
+
