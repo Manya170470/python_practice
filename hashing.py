@@ -4,11 +4,18 @@ arr = list(map(int, input().split()))
 hash_arr = [0] * 13  # Since values are assumed to be in the range 0 to 12
 for num in arr:
     hash_arr[num] += 1
+
+#using dictionary
+freq = {}
+for num in arr:
+    freq[num] = freq.get(num, 0) + 1
+
 # Queries: the number we want to know frequency of
 q = int(input())
 while q > 0:
     number = int(input())
     print(hash_arr[number])
+    print(freq[number])
     q -= 1 
 
 #character hashing through arrays
